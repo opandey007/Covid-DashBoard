@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Covid Dashboard</title>
+    <!-- for-mobile-apps -->
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <meta property="og:title" content="Vide" />
+    <script src="js/jquery-1.11.1.min.js"></script>
+    <script type="text/javascript" src="./../web/data/covid.js"></script>
+    <link href="./../web/data/covid.css"/>
+    <script src="https://code.highcharts.com/highcharts.js"></script>
+<script src="https://code.highcharts.com/modules/series-label.js"></script>
+<script src="https://code.highcharts.com/modules/exporting.js"></script>
+<script src="https://code.highcharts.com/modules/export-data.js"></script>
+<script src="https://code.highcharts.com/modules/accessibility.js"></script>
+  </head>
+  <style>
+.highcharts-credits{
+    display: none !important;
+
+}
+#total_death,#total_confrmd,#total_recoverd{
+    font-size: 45px;
+
+}
+  #total_deathDiv,#total_confrmdDiv,#total_recoverdDiv{
+    border: 2px solid #a23f3f7a;
+    height: 80px;
+    width: 250px;
+    text-align: center;
+    border-radius: 20px;
+background: whitesmoke;
+padding: 16px;
+
+  }
+  #firstRow{
+    display:none;
+    border-spacing: 156px;
+    margin: auto;
+    margin-top: -129px;
+  }
+  #countryList{
+    width: 300px;
+    height: 28px;
+  }
+  #sourceCode{
+      display:none;
+    float: right;
+    color: red;
+    font-size: 25px;
+
+  }
+  .headerCovid {
+    font-family: unset;
+    font-weight: bolder;
+    text-align: center;
+    font-size: 53px;
+    background: #dac9c9;
+    color: #ff000091;
+}
+}
+#countryList{
+    margin-top: 21px;
+}
+  </style>
+  <body>
+    <div>
+        <header class="headerCovid">Covid-19 Dashboard</header>
+        <a href="" id="sourceCode">Go to Source Code</a>
+      <select id="countryList"><option>please select country..</option> </select>
+      <!-- <select id="asOnDate"
+        ><option>Latest</option>
+      </select> -->
+    </div>
+    <table id="firstRow">
+     
+      <tr>
+        <td>
+            <div id="total_deathDiv">
+                <b>Total Recovered</b>
+          <div id="total_death"></div>
+         
+        </div>
+        </td>
+        <td>
+            <div id="total_confrmdDiv">
+        
+          <div id="total_confrmd"></div>
+          <b>Total Conformed</b>
+        </div>
+        </td>
+        <td>
+            <div id="total_recoverdDiv">
+          <div id="total_recoverd"></div>
+        
+          <b>Total death</b>
+        </td>
+    </div>
+      </tr>
+    </table>
+
+  
+<figure class="highcharts-figure">
+    <div id="container"></div>
+    <p class="highcharts-description">
+      
+    </p>
+  </figure>
+  </body>
+</html>
