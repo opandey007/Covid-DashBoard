@@ -82,7 +82,7 @@ $(document).ready(function () {
     var arrayDataConfirmed = [];
     var arrayDataRecovered = [];
     var today = new Date();
-    var dd = String(today.getDate() - 2);
+    var dd = String(today.getDate() - 10);
     var mm = String(today.getMonth() + 1); //January is 0!
     var yyyy = "20";
     today = mm + "/" + dd + "/" + yyyy;
