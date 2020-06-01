@@ -82,28 +82,29 @@ $(document).ready(function () {
     var arrayDataConfirmed = [];
     var arrayDataRecovered = [];
     var today = new Date();
-    var dd = String(today.getDate() - 10);
+    var dd = String(today.getDate() - 12);
     var mm = String(today.getMonth() + 1); //January is 0!
     var yyyy = "20";
-    today = mm + "/" + dd + "/" + yyyy;
+    today = "5/27/20";
     var selectedCountry = $(this).children("option:selected").val();
     $.each(confrmedCase, function (i, obj) {
       arrayDataConfirmed = [];
-      arrayDataConfirmed.push(obj["" + today + ""]);
+      arrayDataConfirmed.push(obj[today]);
       if (selectedCountry == obj["Country/Region"]) {
-        $("#total_confrmd").html(obj["" + today + ""]);
+        $("#total_confrmd").html(obj[today]);
       }
     });
     $.each(recvrCase, function (j, obj1) {
-      arrayDataRecovered.push(obj1["" + today + ""]);
+      arrayDataRecovered = [];
+      arrayDataRecovered.push(obj1[today]);
       if (selectedCountry == obj1["Country/Region"]) {
-        $("#total_recoverd").html(obj1["" + today + ""]);
+        $("#total_recoverd").html(obj1[today]);
       }
     });
     $.each(deathCase, function (k, obj2) {
-      arrayDataDeath.push(obj2["" + today + ""]);
+      arrayDataDeath.push(obj2[today]);
       if (selectedCountry == obj2["Country/Region"]) {
-        $("#total_death").html(obj2["" + today + ""]);
+        $("#total_death").html(obj2[today]);
       }
     });
 
