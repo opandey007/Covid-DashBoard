@@ -3,6 +3,7 @@ var recvrCase = "";
 var confrmedCase = "";
 var deathCase = "";
 $(document).ready(function () {
+  var selectedCountry = $(this).children("option:selected").val();
   var ajax1 = $.ajax({
     dataType: "json",
     url: "./data/recovered.json",
@@ -82,11 +83,11 @@ $(document).ready(function () {
     var arrayDataConfirmed = [];
     var arrayDataRecovered = [];
     var today = new Date();
-    var dd = String(today.getDate() - 12);
-    var mm = String(today.getMonth() + 1); //January is 0!
-    var yyyy = "20";
+    // var dd = String(today.getDate() - 12);
+    // var mm = String(today.getMonth() + 1); //January is 0!
+    // var yyyy = "20";
     today = "5/27/20";
-    var selectedCountry = $(this).children("option:selected").val();
+    selectedCountry = $(this).children("option:selected").val();
     $.each(confrmedCase, function (i, obj) {
       arrayDataConfirmed = [];
       arrayDataConfirmed.push(obj[today]);
